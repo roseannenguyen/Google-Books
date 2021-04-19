@@ -57,55 +57,37 @@ function Search() {
     return (
         <Container fluid>
             <Row>
-                <Col size="md-6">
+                <Col size="md-12">
                     <Jumbotron>
-                        <h1>What Books Should I Read?</h1>
+                        <h1>Search for Book</h1>
                     </Jumbotron>
+                    <h1>Book Search</h1>
                     <form>
                         <Input
                             onChange={handleInputChange}
                             name="title"
-                            placeholder="Title (required)"
+                            placeholder="Type in Book Title"
                         />
-                        <Input
-                            onChange={handleInputChange}
-                            name="author"
-                            placeholder="Author (required)"
-                        />
-                        <TextArea
-                            onChange={handleInputChange}
-                            name="synopsis"
-                            placeholder="Synopsis (Optional)"
-                        />
+
                         <FormBtn
                             disabled={!(formObject.author && formObject.title)}
                             onClick={handleFormSubmit}
                         >
-                            Submit Book
+                            Search
               </FormBtn>
                     </form>
                 </Col>
-                <Col size="md-6 sm-12">
+          
+            </Row>
+            <Row>
+                <Col size="md-12">
                     <Jumbotron>
-                        <h1>Books On My List</h1>
+                        <h1>Results</h1>
                     </Jumbotron>
-                    {books.length ? (
-                        <List>
-                            {books.map(book => (
-                                <ListItem key={book._id}>
-                                    <Link to={"/books/" + book._id}>
-                                        <strong>
-                                            {book.title} by {book.author}
-                                        </strong>
-                                    </Link>
-                                    <DeleteBtn onClick={() => deleteBook(book._id)} />
-                                </ListItem>
-                            ))}
-                        </List>
-                    ) : (
-                        <h3>No Results to Display</h3>
-                    )}
+                    <h1>Display Search</h1>
+              
                 </Col>
+
             </Row>
         </Container>
     );

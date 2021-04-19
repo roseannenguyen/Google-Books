@@ -57,38 +57,15 @@ function Saved() {
     return (
         <Container fluid>
             <Row>
-                <Col size="md-6">
-                    <Jumbotron>
-                        <h1>What Books Should I Read?</h1>
-                    </Jumbotron>
-                    <form>
-                        <Input
-                            onChange={handleInputChange}
-                            name="title"
-                            placeholder="Title (required)"
-                        />
-                        <Input
-                            onChange={handleInputChange}
-                            name="author"
-                            placeholder="Author (required)"
-                        />
-                        <TextArea
-                            onChange={handleInputChange}
-                            name="synopsis"
-                            placeholder="Synopsis (Optional)"
-                        />
-                        <FormBtn
-                            disabled={!(formObject.author && formObject.title)}
-                            onClick={handleFormSubmit}
-                        >
-                            Submit Book
-              </FormBtn>
-                    </form>
-                </Col>
-                <Col size="md-6 sm-12">
-                    <Jumbotron>
+                <Col size="md-12"> <Jumbotron>
+                    <h1>Save Books of Interest</h1>
+                </Jumbotron></Col>
+                   
+                
+                <Col size="md-12">
+                   
                         <h1>Books On My List</h1>
-                    </Jumbotron>
+                   
                     {books.length ? (
                         <List>
                             {books.map(book => (

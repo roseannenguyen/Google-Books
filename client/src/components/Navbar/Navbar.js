@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from "react-router-dom";
 import '../Navbar/Navbar.css';
 
 
@@ -14,16 +14,34 @@ const Navbar = () => {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="/">Home <span class="sr-only"></span></a>
+                        <li className="nav-item">
+                            <Link
+                                to="/"
+                                className={
+                                    window.location.pathname === "/" || window.location.pathname === "/home"
+                                        ? "nav-link active"
+                                        : "nav-link"
+                                }
+                            >
+                                Home
+            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Search</a>
+                            <Link
+                                to="/search"
+                                className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
+                            >
+                                Search
+            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/">Save</a>
+                            <Link
+                                to="/saved"
+                                className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
+                            >
+                                Saved
+            </Link>
                         </li>
-
                     </ul>
                 </div>
             </div>
